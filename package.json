@@ -45,6 +45,7 @@
     "react-error-boundary": "^3.1.4",
     "react-form-builder2": "^0.14.0",
     "react-highcharts": "^16.1.0",
+    "react-icons": "^4.7.1",
     "react-redux": "^8.0.4",
     "react-simple-line-icons": "^1.0.8",
     "redux": "^4.2.0",
@@ -72,7 +73,8 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.74.0",
     "webpack-bundle-analyzer": "^4.6.1",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
   },
   "scripts": {
     "progress": "mkdir build && cp ./public/build.html ./build/index.html && cp ./public/template.csv ./build/template.csv  && cp ./public/favicon.ico ./build/favicon.ico",
@@ -82,7 +84,8 @@
     "publish": "amplify publish",
     "startdev": "serve  -s ./build/ --ssl-cert ./public/certs/cert.crt --ssl-key ./public/certs/localhost.pvk",
     "start": "serve  -s ./build/",
-    "dev": "npm run clean && concurrently  \"npm run progress\" \"webpack --config ./src/webpack.dev.js\" \"npm run startdev\"",
+    "dev": "webpack serve --config ./src/webpack.config.dev",
+    "olddev": "npm run clean && concurrently  \"npm run progress\" \"webpack --config ./src/webpack.dev.js\" \"npm run startdev\"",
     "devw": "npm run cleanw && concurrently  \"npm run progressw\" \"webpack --config ./src/webpack.dev.js\" \"npm run startdev\"",
     "build": "npm run clean && webpack --config ./src/webpack.config.js  && cp ./public/template.csv ./build/template.csv",
     "test": "cypress open",

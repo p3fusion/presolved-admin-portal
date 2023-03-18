@@ -1,6 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
-import lazy from './images/suspence.gif'
+import lazy from './dashboard/assets/images/suspence.gif'
 
 
 

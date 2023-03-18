@@ -6,8 +6,8 @@ import awsExports from './aws-exports';
 import DefaultErrorBoundary from "./errorBoundary";
 import Suspence from "./suspence";
 
-const ReactAdminIndexPage = React.lazy(() => import( "./react-admin"));
-const AdminPortalIndexPage = React.lazy(() => import('./admin'));
+
+const DashboardStoreWrapped = React.lazy(() => import('./dashboard'));
 const root =  document.getElementById("root");
 
 Amplify.configure(awsExports);
@@ -18,8 +18,7 @@ ReactDOM.render(
     <Suspense fallback={<Suspence/>}>
       <DefaultErrorBoundary>
         <Router basepath="/">
-          <AdminPortalIndexPage path="/*" />
-          <ReactAdminIndexPage path="/react-admin" />
+          <DashboardStoreWrapped path="/*" />
         </Router>
       </DefaultErrorBoundary>
     </Suspense>

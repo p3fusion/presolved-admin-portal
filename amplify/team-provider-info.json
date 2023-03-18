@@ -17,6 +17,12 @@
           "appId": "d1pr4g95eoq85h",
           "type": "manual"
         }
+      },
+      "api": {
+        "presolvedadmin": {}
+      },
+      "auth": {
+        "presolvedadmin4b29dfff": {}
       }
     }
   }
